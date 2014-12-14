@@ -1,0 +1,23 @@
+{
+  "name": "browserify-json-bundler",
+  "version": "0.0.1",
+  "description": "Browserify plugin that replaces the default packing method (see [browser-pack](https://github.com/substack/browser-pack)) with a JSON packing method. The result is a browserify bundle in JSON format.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Magnetme/browserify-json-bundler.git"
+  },
+  "keywords": [
+    "browserify",
+    "json"
+  ],
+  "author": "Magnet.me (https://github.com/Magnetme)",
+  "contributers" : [
+	  "Tiddo Langerak<tiddolangerak@gmail.com>"
+	],
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Magnetme/browserify-json-bundler/issues"
+  },
+  "homepage": "https://github.com/Magnetme/browserify-json-bundler"
+}
