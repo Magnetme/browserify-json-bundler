@@ -33,7 +33,7 @@ module.exports = function browserifyJsonBundler(bundle, opts) {
 
 	var bundleStart = '{';
 	if (opts.version !== undefined) {
-		diffStart += '"version":' + JSON.stringify(opts.version) + ',';
+		bundleStart += '"version":' + JSON.stringify(opts.version) + ',';
 	}
 	bundleStart += '"modules":{';
 
