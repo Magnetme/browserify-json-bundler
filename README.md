@@ -33,6 +33,7 @@ Output (pretty-printed):
 ```
 
 ## Methods
+`var bundle = require('browserify-json-bundler');`
 
 ### bundle(opts)
 Bundles the package according to the example above.
