@@ -12,12 +12,15 @@
     "json"
   ],
   "author": "Magnet.me (https://github.com/Magnetme)",
-  "contributers" : [
-	  "Tiddo Langerak<tiddolangerak@gmail.com>"
-	],
+  "contributers": [
+    "Tiddo Langerak<tiddolangerak@gmail.com>"
+  ],
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/Magnetme/browserify-json-bundler/issues"
   },
-  "homepage": "https://github.com/Magnetme/browserify-json-bundler"
+  "homepage": "https://github.com/Magnetme/browserify-json-bundler",
+  "dependencies": {
+    "through2": "^0.6.3"
+  }
 }

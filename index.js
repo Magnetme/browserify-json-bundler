@@ -1,5 +1,7 @@
+var through = require('through2');
+
 function wrapSource(module) {
-	return "function(require,module,exports){\n" + module + "\n}";
+	return 'function(require,module,exports){\n' + module + '\n}';
 }
 
 module.exports = function browserifyJsonBundler(bundle, opts) {
