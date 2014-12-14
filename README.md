@@ -38,6 +38,6 @@ Output (pretty-printed):
 ### bundle(opts)
 Bundles the package according to the example above.
 
-#### Arguments
-`[opts.version]` An optional version number or hash that will be added to the root of the json output.
+**parameters**
+- `[opts.version]` An optional version number or hash that will be added to the root of the json output.
 
