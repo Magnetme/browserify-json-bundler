@@ -1,6 +1,6 @@
-Browserify plugin that replaces the default packing method (see [browser-pack](https://github.com/substack/browser-pack)) with a JSON packing method. The result is a browserify bundle in JSON format.
+Browserify plugin that replaces the default packing method with a JSON packing method. The result is a browserify bundle in JSON format.
 
-This plugin is part of the `browserify-diff` toolchain.
+This plugin is part of the [browserify-diff](https://github.com/Magnetme/browserify-diff) toolchain (you probably don't want to use this module directly).
 
 ## Example
 
@@ -32,12 +32,26 @@ Output (pretty-printed):
 }
 ```
 
-## Methods
-`var bundle = require('browserify-json-bundler');`
+## Usage
+```javascript
+var browserify = require('browserify');
+var bundler = require('browserify-json-bundler');
 
-### bundle(opts)
+//ExposeAll is required
+browserify('app.js', { exposeAll : true })
+	.plugin(bundler, { version : getNextVersionNumber() })
+	.bundle()
+	.pipe(fs.createWriteStream('bundle.js'));
+```
+
+
+## Methods
+`var bundler = require('browserify-json-bundler');`
+
+### bundler(b, opts)
 Bundles the package according to the example above.
 
 **parameters**
+- `b` A browserify instance
 - `[opts.version]` An optional version number or hash that will be added to the root of the json output.
 
