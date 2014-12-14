@@ -6,6 +6,7 @@ function wrapSource(module) {
 
 module.exports = function browserifyJsonBundler(bundle, opts) {
 	var isFirst = true;
+	var entry = [];
 
 	var stream = through.obj(function(module, enc, next) {
 			var moduleString = '"' + module.id + '":[' + JSON.stringify(wrapSource(module.source)) + ',' + JSON.stringify(module.deps) + ']';
@@ -16,11 +17,16 @@ module.exports = function browserifyJsonBundler(bundle, opts) {
 				isFirst = false;
 			}
 
+			if (module.entry) {
+				entry.push(module.id);
+			}
+
 			stream.push(Buffer(moduleString));
 			next();
 		}, function flush(){
-			//Close modules object & entire json object
-			stream.push(Buffer('}}'));
+			//Close modules object, adds entry array & closes entire json object
+			var ending = '},"entry":' + JSON.stringify(entry) + '}';
+			stream.push(Buffer(ending));
 			stream.push(null);
 		}
 	);
