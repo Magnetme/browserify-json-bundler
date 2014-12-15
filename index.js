@@ -1,15 +1,11 @@
 var through = require('through2');
 
-function wrapSource(module) {
-	return 'function(require,module,exports){\n' + module + '\n}';
-}
-
 module.exports = function browserifyJsonBundler(bundle, opts) {
 	var isFirst = true;
 	var entry = [];
 
 	var stream = through.obj(function(module, enc, next) {
-			var moduleString = '"' + module.id + '":[' + JSON.stringify(wrapSource(module.source)) + ',' + JSON.stringify(module.deps) + ']';
+			var moduleString = '"' + module.id + '":[' + JSON.stringify(module.source) + ',' + JSON.stringify(module.deps) + ']';
 
 			if (!isFirst) {
 				moduleString = ',' + moduleString;

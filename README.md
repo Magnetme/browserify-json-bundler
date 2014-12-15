@@ -25,8 +25,8 @@ Output (pretty-printed):
 ```json
 {
 	"modules" : {
-		"a1b5af78" : ["function(require,module,exports){\nconsole.log(require('./foo')(5))\n}", { "./foo" : "b8f69fa5" }],
-		"b8f69fa5" : ["function(require,module,exports){\nmodule.exports = function (n) { return n * 111 }\n}", {}]
+		"a1b5af78" : ["console.log(require('./foo')(5))", { "./foo" : "b8f69fa5" }],
+		"b8f69fa5" : ["module.exports = function (n) { return n * 111 }", {}]
 	},
 	"entry" : ["a1b5af78"]
 }
